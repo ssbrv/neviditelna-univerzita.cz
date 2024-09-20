@@ -1,0 +1,15 @@
+services:
+  neviditelna-univerzita.cz-client-dev:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    env_file: .env.docker-dev
+    environment:
+      - WDS_SOCKET_HOST=127.0.0.1
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    ports:
+      - "${VITE_CLIENT_PORT}:${VITE_CLIENT_PORT}"
+    volumes:
+      - ./:/app
+      - /app/node_modules
