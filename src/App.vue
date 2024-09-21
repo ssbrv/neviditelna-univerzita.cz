@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
-  <div>neviditelna-univerzita.cz</div>
+  <router-view />
 </template>
