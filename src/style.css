@@ -25,6 +25,7 @@ code {
   --action: 33, 150, 243;
   --failure: 220, 20, 60;
   --success: 50, 205, 50;
+  --passive: 120, 120, 120;
 
   --link: 153, 202, 249;
   --nav-focused: 255, 193, 7;

@@ -12,6 +12,7 @@ const config: Config = {
       action: "rgba(var(--action))",
       failure: "rgba(var(--failure))",
       success: "rgba(var(--success))",
+      passive: "rgba(var(--passive))",
 
       link: "rgba(var(--link))",
       nav: {
