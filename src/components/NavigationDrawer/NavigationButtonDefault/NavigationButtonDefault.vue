@@ -46,10 +46,13 @@ function isActive() {
     @click="editPath(navigationButton.pathSegment)"
     :class="{ 'tw-bg-nav-focused': isActive() }"
     :ripple="false"
-    :prepend-icon="navigationButton.icon"
   >
     <template v-slot:prepend>
-      <v-icon class="tw-text-passive" size="large" />
+      <v-icon
+        :icon="navigationButton.icon"
+        class="tw-text-passive"
+        size="large"
+      />
     </template>
 
     <v-list-item-title class="tw-text-sm tw-font-bold">
