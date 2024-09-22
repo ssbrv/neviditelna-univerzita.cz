@@ -8,7 +8,7 @@ const props = defineProps<{
 <template>
   <v-navigation-drawer v-model="props.drawer">
     <v-list>
-      <v-list-subheader class="tw-text-xs tw-font-bold tw-text-passive">
+      <v-list-subheader class="tw-text-xs tw-font-bold">
         APPLICATIONS
       </v-list-subheader>
 
