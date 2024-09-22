@@ -1,19 +1,59 @@
 <script setup lang="ts">
+import { useRoute, useRouter } from "vue-router";
+
 const navigationButton = defineProps<{
   icon: string;
   text: string;
+  pathSegment: string;
+  pathLevel: number;
 }>();
+
+const route = useRoute();
+const router = useRouter();
+
+function editPath(pathSegment: string) {
+  const cleanPath = route.path.split("?")[0].split("#")[0];
+  const pathSegments = cleanPath.split("/").filter(Boolean);
+
+  if (pathSegments.length >= navigationButton.pathLevel) {
+    pathSegments.splice(
+      navigationButton.pathLevel - 1,
+      pathSegments.length,
+      pathSegment,
+    );
+  } else {
+    pathSegments.push(pathSegment);
+  }
+
+  const newPath = "/" + pathSegments.join("/");
+  router.push(newPath);
+}
+
+function isActive() {
+  const cleanCurrentPath = route.path.split("?")[0].split("#")[0];
+  const currentSegments = cleanCurrentPath.split("/").filter(Boolean);
+  const cleanLinkPath = navigationButton.pathSegment
+    .split("?")[0]
+    .split("#")[0];
+  const linkSegments = cleanLinkPath.split("/").filter(Boolean);
+
+  return currentSegments[navigationButton.pathLevel - 1] === linkSegments[0];
+}
 </script>
 
 <template>
-  <div class="tw-flex tw-gap-6 tw-items-center">
-    <v-icon
-      class="tw-text-passive"
-      :icon="navigationButton.icon"
-      size="large"
-    />
-    <v-list-item-title class="tw-font-bold tw-text-sm">
+  <v-list-item
+    @click="editPath(navigationButton.pathSegment)"
+    :class="{ 'tw-bg-nav-focused': isActive() }"
+    :ripple="false"
+    :prepend-icon="navigationButton.icon"
+  >
+    <template v-slot:prepend>
+      <v-icon class="tw-text-passive" size="large" />
+    </template>
+
+    <v-list-item-title class="tw-text-sm tw-font-bold">
       {{ navigationButton.text }}
     </v-list-item-title>
-  </div>
+  </v-list-item>
 </template>
