@@ -3,7 +3,7 @@ import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
-import { mdiAccountCircle, mdiEarth, mdiCog } from "@mdi/js";
+import { mdiAccountCircle, mdiEarth, mdiCog, mdiLogout } from "@mdi/js";
 
 export const vuetifyConfiguration = createVuetify({
   components,
@@ -20,6 +20,7 @@ export const vuetifyConfiguration = createVuetify({
       accountCircle: mdiAccountCircle,
       earth: mdiEarth,
       cog: mdiCog,
+      logout: mdiLogout,
     },
     sets: {
       mdi,

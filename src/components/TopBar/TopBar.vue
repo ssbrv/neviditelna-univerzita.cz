@@ -1,14 +1,19 @@
 <script setup lang="ts">
+import { inject } from "vue";
 import { User } from "../../types";
+import UserMenu from "../UserMenu";
+
+const user: User = inject("user") as User;
 
 const props = defineProps<{
   onToggleDrawer: () => void;
-  user: User;
 }>();
+
+const menuActivatorId = "menu-activator";
 </script>
 
 <template>
-  <v-app-bar class="!tw-bg-action !tw-text-primary">
+  <v-app-bar class="!tw-bg-action !tw-pr-3 !tw-text-primary">
     <v-app-bar-nav-icon
       class="tw-btn"
       :ripple="false"
@@ -20,11 +25,12 @@ const props = defineProps<{
 
     <v-spacer />
 
-    <v-btn class="tw-btn" prepend-icon="$accountCircle">
+    <v-btn class="tw-btn" :id="menuActivatorId">
       <template v-slot:prepend>
-        <v-icon size="x-large" />
+        <v-icon icon="$accountCircle" size="x-large" />
       </template>
-      {{ props.user.firstName + " " + props.user.lastName }}
+      {{ user.firstName + " " + user.lastName }}
     </v-btn>
+    <UserMenu :user="user" :activator="'#' + menuActivatorId" />
   </v-app-bar>
 </template>
