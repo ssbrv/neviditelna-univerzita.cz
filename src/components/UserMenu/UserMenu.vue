@@ -10,7 +10,7 @@ function logout() {
 
 <template>
   <v-menu :activator="activator" :close-on-content-click="false">
-    <v-card min-width="300" class="shadow-md oblong">
+    <v-card min-width="300" class="shadow-lg oblong">
       <v-list lines="two">
         <v-list-item
           :title="props.user.firstName + ' ' + props.user.lastName"
