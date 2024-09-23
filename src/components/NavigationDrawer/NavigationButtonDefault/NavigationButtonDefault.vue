@@ -19,7 +19,7 @@ function editPath(pathSegment: string) {
     pathSegments.splice(
       navigationButton.pathLevel - 1,
       pathSegments.length,
-      pathSegment,
+      pathSegment
     );
   } else {
     pathSegments.push(pathSegment);
@@ -44,14 +44,13 @@ function isActive() {
 <template>
   <v-list-item
     @click="editPath(navigationButton.pathSegment)"
-    :class="{ 'tw-bg-nav-focused': isActive() }"
-    :ripple="false"
+    :class="{ 'bg-focused': isActive() }"
   >
     <template v-slot:prepend>
       <v-icon :icon="navigationButton.icon" size="large" />
     </template>
 
-    <v-list-item-title class="tw-text-sm tw-font-bold">
+    <v-list-item-title class="text-body-2 font-weight-bold">
       {{ navigationButton.text }}
     </v-list-item-title>
   </v-list-item>

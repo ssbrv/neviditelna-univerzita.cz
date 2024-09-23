@@ -19,13 +19,13 @@ const slotNames: Array<string> = ["registry"];
       <NavigationButtonDefault
         text="Registry"
         icon="$earth"
-        path-segment="domain-detail"
+        path-segment="domains"
         :path-level="1"
       />
     </template>
   </NavigationDrawer>
 
   <v-main>
-    <router-view class="tw-p-8" />
+    <router-view class="px-8 py-8" />
   </v-main>
 </template>

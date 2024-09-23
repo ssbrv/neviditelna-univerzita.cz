@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { User } from "../../types";
+import { User } from "../../types/user";
 
 const props = defineProps<{ user: User; activator: string }>();
 
@@ -10,8 +10,8 @@ function logout() {
 
 <template>
   <v-menu :activator="activator" :close-on-content-click="false">
-    <v-card min-width="300">
-      <v-list class="tw-p-0" lines="two">
+    <v-card min-width="300" class="shadow-md oblong">
+      <v-list lines="two">
         <v-list-item
           :title="props.user.firstName + ' ' + props.user.lastName"
           :subtitle="props.user.role"
@@ -24,7 +24,7 @@ function logout() {
         </v-list-item>
 
         <v-divider />
-        <v-list-item @click="logout()" title="Logout" :ripple="false">
+        <v-list-item @click="logout()" title="Logout">
           <template v-slot:prepend>
             <v-avatar>
               <v-icon icon="$logout" size="x-large" />
