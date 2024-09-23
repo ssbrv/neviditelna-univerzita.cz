@@ -1,23 +1,34 @@
-import DomainDetail from "./pages/DomainDetail";
 import { createRouter, createWebHistory } from "vue-router";
 import NotFound from "./pages/NotFound";
-import AuthenticationProvider from "./providers/AuthenticationProvider.vue";
+import AuthenticationProvider from "./providers/AuthenticationProvider";
 import AppLayout from "./layouts/AppLayout";
+import DomainDetailProvider from "./providers/DomainDetailProvider";
+import Domains from "./pages/Domains";
+import DomainDetails from "./pages/Domains/DomainDetails";
 
 const routes = [
   {
     path: "/",
     component: AuthenticationProvider,
-    redirect: "/domain-detail",
     children: [
       {
         path: "",
         component: AppLayout,
-        redirect: "/domain-detail",
+        redirect: "/domains",
         children: [
           {
-            path: "domain-detail",
-            component: DomainDetail,
+            path: "domains",
+            component: Domains,
+          },
+          {
+            path: "domains/:domainId",
+            component: DomainDetailProvider,
+            children: [
+              {
+                path: "details",
+                component: DomainDetails,
+              },
+            ],
           },
           {
             path: "/:pathMatch(.*)*",
