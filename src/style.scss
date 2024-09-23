@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+// animation
+
+@mixin click-animation {
+  transition: transform 0.08s ease-in-out;
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.click-animation {
+  @include click-animation;
+}
+
+// vuetify
+
+.v-btn {
+  @include click-animation;
+}
+
+.v-list {
+  padding: 0;
+}
+
+// shadows
+
+.shadow-sm {
+  box-shadow: rgba(149, 157, 165, 0.2) 4px 4px 8px !important;
+}
+
+.shadow-md {
+  box-shadow: rgba(149, 157, 165, 0.4) 4px 4px 8px !important;
+}
+
+.shadow-lg {
+  box-shadow: rgba(149, 157, 165, 0.6) 4px 4px 8px !important;
+}
+
+// border radius
+
+.oblong {
+  border-radius: 3px !important;
+}
+
+.circle {
+  border-radius: 50% !important;
+}

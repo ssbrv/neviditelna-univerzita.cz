@@ -5,12 +5,28 @@ import * as directives from "vuetify/directives";
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
 import { mdiAccountCircle, mdiEarth, mdiCog, mdiLogout } from "@mdi/js";
 
+const customLightTheme = {
+  colors: {
+    background: "#FAFAFA",
+    primary: "#FFFFFF",
+    secondary: "#EEEEEE",
+    action: "#2196F3",
+    failure: "#DC143C",
+    success: "#32CD32",
+    passive: "#787878",
+    link: "#99CAF9",
+    focused: "#FFC107",
+  },
+};
+
 export const vuetifyConfiguration = createVuetify({
   components,
   directives,
   defaults: {
-    VBtn: {
+    global: {
       ripple: false,
+      elevation: 0,
+      rounded: false,
     },
   },
   icons: {
@@ -24,6 +40,12 @@ export const vuetifyConfiguration = createVuetify({
     },
     sets: {
       mdi,
+    },
+  },
+  theme: {
+    defaultTheme: "customLightTheme",
+    themes: {
+      customLightTheme,
     },
   },
 });
