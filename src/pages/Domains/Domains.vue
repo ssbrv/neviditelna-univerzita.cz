@@ -22,12 +22,12 @@ function navigateToDomainDetails(domainId: string) {
     </ul>
 
     <template v-else-if="domainList.error?.value">
-      <v-card :title="domainList.error.value?.message" />
+      <v-card :title="domainList.error.value.message" />
     </template>
 
     <ul v-else class="d-flex flex-column ga-4">
       <v-card
-        v-for="domain in domainList.data?.value"
+        v-for="domain in domainList.data.value"
         :key="domain.id"
         :title="domain.fqdn"
         @click="navigateToDomainDetails(domain.id)"

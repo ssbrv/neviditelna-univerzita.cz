@@ -3,7 +3,15 @@ import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
-import { mdiAccountCircle, mdiEarth, mdiCog, mdiLogout } from "@mdi/js";
+import {
+  mdiAccountCircle,
+  mdiEarth,
+  mdiLogout,
+  mdiEye,
+  mdiEyeOff,
+  mdiCheckboxMarkedCircle,
+  mdiCloseCircle,
+} from "@mdi/js";
 
 const customLightTheme = {
   colors: {
@@ -14,7 +22,6 @@ const customLightTheme = {
     failure: "#DC143C",
     success: "#32CD32",
     passive: "#787878",
-    link: "#99CAF9",
     focused: "#FFC107",
   },
 };
@@ -35,8 +42,11 @@ export const vuetifyConfiguration = createVuetify({
       ...aliases,
       accountCircle: mdiAccountCircle,
       earth: mdiEarth,
-      cog: mdiCog,
       logout: mdiLogout,
+      hide: mdiEyeOff,
+      show: mdiEye,
+      successCircle: mdiCheckboxMarkedCircle,
+      failCircle: mdiCloseCircle,
     },
     sets: {
       mdi,

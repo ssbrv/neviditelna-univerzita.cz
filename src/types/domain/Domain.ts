@@ -3,70 +3,63 @@ export interface DNS {
   ip_address: string;
 }
 
-export interface NSSet {
+export interface DomainNSSet {
   handle: string;
   registrar: string;
   dns: DNS[];
 }
 
-export interface KeySet {
+export interface DomainKeySet {
   handle: string;
   registrar: string;
   dns_keys: string[];
 }
 
-export interface Publish {
+export interface DomainPublish {
   organization: boolean;
   name: boolean;
 }
 
-export interface Owner {
+export interface DomainContact {
   handle: string;
   organization: string;
   name: string;
-  publish: Publish;
+  publish: DomainPublish;
 }
 
-export interface Contact {
-  handle: string;
-  organization: string;
-  name: string;
-  publish: Publish;
-}
-
-export interface Event {
+export interface DomainEvent {
   timestamp: string;
   registrar_handle: string;
 }
 
-export interface Events {
-  registered: Event;
-  transferred: Event;
-  updated: Event;
-  unregistered: Event | null;
+export interface DomainEvents {
+  registered: DomainEvent;
+  transferred: DomainEvent;
+  updated: DomainEvent;
+  unregistered?: DomainEvent;
 }
 
-export interface StateFlag {
+export interface DomainStateFlag {
   name: string;
   active: boolean;
   description: string;
 }
 
-export interface StateFlags {
-  flags: StateFlag[];
+export interface DomainStateFlags {
+  flags: DomainStateFlag[];
   groups: string[][];
 }
 
 export interface DomainDetail {
   fqdn: string;
-  nsset: NSSet;
-  keyset: KeySet;
-  owner: Owner;
-  sponsoring_registrar: string;
-  administrative_contacts: Contact[];
+  nsset: DomainNSSet;
+  keyset: DomainKeySet;
+  owner: DomainContact;
+  sponsoring_registrar?: string;
+  administrative_contacts?: DomainContact[];
   expires_at: string;
-  events: Events;
-  state_flags: StateFlags;
+  events: DomainEvents;
+  state_flags: DomainStateFlags;
 }
 
 export interface Domain {

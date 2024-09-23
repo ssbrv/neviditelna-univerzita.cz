@@ -1,1 +1,1 @@
-export type { Domain, DomainDetail } from "./Domain";
+export * from "./Domain";
