@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./Router";
 
 import "vuetify/styles";
-import "./style.css";
+import "./style.scss";
 
 import { vuetifyConfiguration } from "./VuetifyConfiguration";
 
