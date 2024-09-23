@@ -1,6 +1,11 @@
 FROM node:latest AS builder
 WORKDIR /app
-COPY package.json package-lock.json .
+COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
+CMD ["npm", "run", "docker-dev"]
+
+FROM node:latest
+WORKDIR /app
+COPY --from=builder /app /app
 CMD ["npm", "run", "docker-dev"]
