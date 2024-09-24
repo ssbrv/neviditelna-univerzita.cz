@@ -44,15 +44,11 @@ watch(
 </script>
 <template>
   <div>
-    <template v-if="error">
-      <v-container class="px-16">
-        <ErrorCard :message="error.message" />
-      </v-container>
-    </template>
+    <v-container v-if="error" class="px-16">
+      <ErrorCard :message="error.message" />
+    </v-container>
 
-    <template v-else-if="isLoading || !domainDetails">
-      <DomainDetailsLoadingSkeleton />
-    </template>
+    <DomainDetailsLoadingSkeleton v-else-if="isLoading || !domainDetails" />
 
     <template v-else>
       <div class="d-flex flex-wrap align-center ga-6 mb-6">
