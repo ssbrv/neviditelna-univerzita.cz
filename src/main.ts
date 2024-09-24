@@ -5,6 +5,6 @@ import router from "./Router";
 import "vuetify/styles";
 import "./style.scss";
 
-import { vuetifyConfiguration } from "./VuetifyConfiguration";
+import { vuetify } from "./vuetify.config";
 
-createApp(App).use(router).use(vuetifyConfiguration).mount("#app");
+createApp(App).use(router).use(vuetify).mount("#app");

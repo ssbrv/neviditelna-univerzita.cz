@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import NotFound from "./pages/NotFound";
 import AuthenticationProvider from "./providers/AuthenticationProvider";
 import AppLayout from "./layouts/AppLayout";
-import DomainDetailProvider from "./providers/DomainDetailProvider";
+import DomainDetailsProvider from "./providers/DomainDetailsProvider";
 import Domains from "./pages/Domains";
 import DomainDetails from "./pages/Domains/DomainDetails";
 
@@ -22,7 +22,7 @@ const routes = [
           },
           {
             path: "domains/:domainId",
-            component: DomainDetailProvider,
+            component: DomainDetailsProvider,
             children: [
               {
                 path: "details",

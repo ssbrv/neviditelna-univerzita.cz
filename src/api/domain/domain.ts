@@ -1,12 +1,12 @@
 import { AxiosError } from "axios";
-import { Domain, DomainDetail } from "../../types/domain";
+import { Domain, DomainDetails } from "../../types/domain";
 import { FetchResponse, useFetch } from "../useFetch";
 import { ref, shallowRef } from "vue";
 
-export function useFetchDomainDetail(
+export function useFetchDomainDetails(
   domainId: string
-): FetchResponse<DomainDetail> {
-  if (domainId === "1") return useFetch<DomainDetail>("/domain-detail.json");
+): FetchResponse<DomainDetails> {
+  if (domainId === "1") return useFetch<DomainDetails>("/domain-detail.json");
   // mock call for other than neviditelna-univerzita.cz
   return {
     data: ref(undefined),

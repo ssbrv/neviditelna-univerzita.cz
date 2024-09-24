@@ -26,7 +26,7 @@ const customLightTheme = {
   },
 };
 
-export const vuetifyConfiguration = createVuetify({
+export const vuetify = createVuetify({
   components,
   directives,
   defaults: {

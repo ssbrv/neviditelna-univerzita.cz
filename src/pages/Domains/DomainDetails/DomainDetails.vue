@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { inject, onMounted, ref, watch } from "vue";
-import { DomainDetail } from "../../../types/domain";
+import { DomainDetails } from "../../../types/domain";
 import { FetchResponse } from "../../../api";
-import { DOMAIN_DETAIL_SYMBOL } from "../../../providers/DomainDetailProvider";
+import { DOMAIN_DETAILS_SYMBOL } from "../../../providers/DomainDetailsProvider";
 import DomainEventsCard from "../../../components/DomainEventsCard";
 import DomainAuthInfoAndExpirationCard from "../../../components/DomainAuthInfoAndExpirationDateCard";
 import DomainContactCard from "../../../components/DomainContactCard";
@@ -17,7 +17,7 @@ const {
   data: domainDetails,
   error,
   isLoading,
-} = inject(DOMAIN_DETAIL_SYMBOL) as FetchResponse<DomainDetail>;
+} = inject(DOMAIN_DETAILS_SYMBOL) as FetchResponse<DomainDetails>;
 
 const route = useRoute();
 const router = useRouter();

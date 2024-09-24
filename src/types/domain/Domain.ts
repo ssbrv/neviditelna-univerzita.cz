@@ -50,7 +50,7 @@ export interface DomainStateFlags {
   groups: string[][];
 }
 
-export interface DomainDetail {
+export interface DomainDetails {
   fqdn: string;
   nsset: DomainNSSet;
   keyset: DomainKeySet;
