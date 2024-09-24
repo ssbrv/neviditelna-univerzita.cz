@@ -62,7 +62,7 @@ watch(
         />
       </div>
       <v-row>
-        <v-col class="d-flex flex-column ga-6" :md="8">
+        <v-col class="d-flex flex-column ga-6" :lg="8" :md="12" :sm="12">
           <DomainAuthInfoAndExpirationCard
             :expires-at="domainDetails.expires_at"
             secret="some_secret_value"
@@ -77,7 +77,7 @@ watch(
             :flags="domainDetails.state_flags.flags"
           />
         </v-col>
-        <v-col class="d-flex flex-column ga-6" :md="4">
+        <v-col class="d-flex flex-column ga-6" :lg="4" :md="12" :sm="12">
           <DomainContactCard title="Owner" :contact="domainDetails.owner" />
           <DomainContactCard
             v-if="verbose"
