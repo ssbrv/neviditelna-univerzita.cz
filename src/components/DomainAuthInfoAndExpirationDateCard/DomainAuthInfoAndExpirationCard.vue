@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import CardWithHeader from "../CardWithHeader";
-import { formatDateTimeToEnUs } from "../../utils/formatters";
-const props = defineProps<{ secret: string; expiresAt: string }>();
-const show = ref(false);
-const secret = ref(props.secret);
+import { ref } from 'vue'
+import CardWithHeader from '../CardWithHeader'
+import { formatDateTimeToEnUs } from '../../utils/formatters'
+const props = defineProps<{ secret: string; expiresAt: string }>()
+const show = ref(false)
+const secret = ref(props.secret)
 </script>
 <template>
   <CardWithHeader>
@@ -19,7 +19,7 @@ const secret = ref(props.secret);
           class="click-animation text-action"
         />
         <i>
-          {{ show ? secret : "•".repeat(secret.length) }}
+          {{ show ? secret : '•'.repeat(secret.length) }}
         </i>
       </v-col>
       <v-responsive width="100%" />

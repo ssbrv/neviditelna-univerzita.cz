@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ErrorCard from "../../components/ErrorCard";
+import ErrorCard from '../../components/ErrorCard'
 </script>
 <template>
   <v-container class="px-16">

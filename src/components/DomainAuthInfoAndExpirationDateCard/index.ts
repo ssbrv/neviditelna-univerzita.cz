@@ -1,2 +1,2 @@
-import DomainAuthInfoAndExpirationCard from "./DomainAuthInfoAndExpirationCard.vue";
-export default DomainAuthInfoAndExpirationCard;
+import DomainAuthInfoAndExpirationCard from './DomainAuthInfoAndExpirationCard.vue'
+export default DomainAuthInfoAndExpirationCard

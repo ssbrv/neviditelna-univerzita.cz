@@ -1,2 +1,2 @@
-import StatusIcon from "./StatusIcon.vue";
-export default StatusIcon;
+import StatusIcon from './StatusIcon.vue'
+export default StatusIcon

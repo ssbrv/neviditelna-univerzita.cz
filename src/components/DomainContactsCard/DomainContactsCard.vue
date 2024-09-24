@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import { DomainContact } from "../../types/domain";
-import CardWithHeader from "../CardWithHeader";
-defineProps<{ contacts?: DomainContact[] }>();
+import { type DomainContact } from '../../types/domain'
+import CardWithHeader from '../CardWithHeader'
+defineProps<{ contacts?: DomainContact[] }>()
 </script>
 <template>
   <CardWithHeader title="Administrative contacts">
-    <v-row
-      v-if="contacts && contacts.length"
-      class="align-center ga-1"
-      no-gutters
-    >
+    <v-row v-if="contacts && contacts.length" class="align-center ga-1" no-gutters>
       <template v-for="(contact, index) in contacts" :key="index">
         <v-col :cols="3">
           <strong>{{ contact.name }}:</strong>

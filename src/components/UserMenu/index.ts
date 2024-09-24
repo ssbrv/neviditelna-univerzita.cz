@@ -1,2 +1,2 @@
-import UserMenu from "./UserMenu.vue";
-export default UserMenu;
+import UserMenu from './UserMenu.vue'
+export default UserMenu

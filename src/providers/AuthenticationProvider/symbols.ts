@@ -1,1 +1,1 @@
-export const USER_SYMBOL = Symbol("user");
+export const USER_SYMBOL = Symbol('user')

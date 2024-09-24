@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { User } from "../../types/user";
+import { User } from '../../types/user'
 
-const props = defineProps<{ user: User; activator: string }>();
+const props = defineProps<{ user: User; activator: string }>()
 
 function logout() {
   // implementation of logout...

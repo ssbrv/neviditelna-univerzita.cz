@@ -1,2 +1,2 @@
-import DomainStateFlagsCardVerbose from "./DomainStateFlagsCardVerbose.vue";
-export default DomainStateFlagsCardVerbose;
+import DomainStateFlagsCardVerbose from './DomainStateFlagsCardVerbose.vue'
+export default DomainStateFlagsCardVerbose

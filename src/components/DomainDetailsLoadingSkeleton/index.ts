@@ -1,2 +1,2 @@
-import DomainDetailsLoadingSkeleton from "./DomainDetailsLoadingSkeleton.vue";
-export default DomainDetailsLoadingSkeleton;
+import DomainDetailsLoadingSkeleton from './DomainDetailsLoadingSkeleton.vue'
+export default DomainDetailsLoadingSkeleton

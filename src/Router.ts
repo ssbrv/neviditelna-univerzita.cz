@@ -1,52 +1,52 @@
-import { createRouter, createWebHistory } from "vue-router";
-import NotFound from "./pages/NotFound";
-import AuthenticationProvider from "./providers/AuthenticationProvider";
-import AppLayout from "./layouts/AppLayout";
-import DomainDetailsProvider from "./providers/DomainDetailsProvider";
-import Domains from "./pages/Domains";
-import DomainDetails from "./pages/Domains/DomainDetails";
+import { createRouter, createWebHistory } from 'vue-router'
+import NotFound from './pages/NotFound'
+import AuthenticationProvider from './providers/AuthenticationProvider'
+import AppLayout from './layouts/AppLayout'
+import DomainDetailsProvider from './providers/DomainDetailsProvider'
+import DomainList from './pages/DomainList'
+import DomainDetails from './pages/DomainList/DomainDetails'
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     component: AuthenticationProvider,
     children: [
       {
-        path: "",
+        path: '',
         component: AppLayout,
-        redirect: "/domains",
+        redirect: '/domain-list',
         children: [
           {
-            path: "domains",
-            component: Domains,
+            path: 'domain-list',
+            component: DomainList
           },
           {
-            path: "domains/:domainId",
+            path: 'domain-list/:domainId',
             component: DomainDetailsProvider,
             children: [
               {
-                path: "details",
-                component: DomainDetails,
-              },
-            ],
+                path: 'details',
+                component: DomainDetails
+              }
+            ]
           },
           {
-            path: "/:pathMatch(.*)*",
-            component: NotFound,
-          },
-        ],
-      },
-    ],
+            path: '/:pathMatch(.*)*',
+            component: NotFound
+          }
+        ]
+      }
+    ]
   },
   {
-    path: "/:pathMatch(.*)*",
-    component: NotFound,
-  },
-];
+    path: '/:pathMatch(.*)*',
+    component: NotFound
+  }
+]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
-});
+  routes
+})
 
-export default router;
+export default router

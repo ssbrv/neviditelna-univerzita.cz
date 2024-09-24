@@ -1,2 +1,2 @@
-import DomainStateFlagsCard from "./DomainStateFlagsCard.vue";
-export default DomainStateFlagsCard;
+import DomainStateFlagsCard from './DomainStateFlagsCard.vue'
+export default DomainStateFlagsCard

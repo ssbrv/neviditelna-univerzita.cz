@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { DomainNSSet } from "../../types/domain";
-import CardWithHeader from "../CardWithHeader";
-defineProps<{ nsSet: DomainNSSet }>();
+import { type DomainNSSet } from '../../types/domain'
+import CardWithHeader from '../CardWithHeader'
+defineProps<{ nsSet: DomainNSSet }>()
 </script>
 <template>
   <CardWithHeader title="NSSet">
@@ -24,9 +24,7 @@ defineProps<{ nsSet: DomainNSSet }>();
         <strong>DNS:</strong>
       </v-col>
       <v-col>
-        <p v-for="dns in nsSet.dns" :key="dns.name">
-          {{ dns.name }} ({{ dns.ip_address }})
-        </p>
+        <p v-for="dns in nsSet.dns" :key="dns.name">{{ dns.name }} ({{ dns.ip_address }})</p>
       </v-col>
     </v-row>
   </CardWithHeader>

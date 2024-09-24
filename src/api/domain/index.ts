@@ -1,1 +1,1 @@
-export { useFetchDomainDetails, useFetchDomains } from "./domain";
+export { useFetchDomainDetails, useFetchDomains } from './domain'

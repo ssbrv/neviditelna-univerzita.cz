@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { DomainContact } from "../../types/domain";
-import CardWithHeader from "../CardWithHeader";
-import StatusIcon from "../StatusIcon";
-defineProps<{ contact: DomainContact; title: string }>();
+import { type DomainContact } from '../../types/domain'
+import CardWithHeader from '../CardWithHeader'
+import StatusIcon from '../StatusIcon'
+defineProps<{ contact: DomainContact; title: string }>()
 </script>
 <template>
   <CardWithHeader :title="title">
@@ -16,11 +16,7 @@ defineProps<{ contact: DomainContact; title: string }>();
       </v-col>
       <v-responsive width="100%" />
       <v-col :cols="1">
-        <StatusIcon
-          :status="contact.publish.organization"
-          icon-false="$hide"
-          icon-true="$show"
-        />
+        <StatusIcon :status="contact.publish.organization" icon-false="$hide" icon-true="$show" />
       </v-col>
       <v-col :cols="4">
         <strong>Organization:</strong>
@@ -30,11 +26,7 @@ defineProps<{ contact: DomainContact; title: string }>();
       </v-col>
       <v-responsive width="100%" />
       <v-col :cols="1">
-        <StatusIcon
-          :status="contact.publish.name"
-          icon-false="$hide"
-          icon-true="$show"
-        />
+        <StatusIcon :status="contact.publish.name" icon-false="$hide" icon-true="$show" />
       </v-col>
       <v-col :cols="4">
         <strong>Name:</strong>

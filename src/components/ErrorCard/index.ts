@@ -1,2 +1,2 @@
-import ErrorCard from "./ErrorCard.vue";
-export default ErrorCard;
+import ErrorCard from './ErrorCard.vue'
+export default ErrorCard

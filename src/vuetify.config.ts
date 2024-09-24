@@ -1,8 +1,8 @@
-import { createVuetify } from "vuetify";
-import * as components from "vuetify/components";
-import * as directives from "vuetify/directives";
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
-import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
+import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import {
   mdiAccountCircle,
   mdiEarth,
@@ -11,21 +11,21 @@ import {
   mdiEyeOff,
   mdiCheckboxMarkedCircle,
   mdiCloseCircle,
-  mdiAlertCircle,
-} from "@mdi/js";
+  mdiAlertCircle
+} from '@mdi/js'
 
 const customLightTheme = {
   colors: {
-    background: "#FAFAFA",
-    primary: "#FFFFFF",
-    secondary: "#EEEEEE",
-    action: "#2196F3",
-    failure: "#DC143C",
-    success: "#32CD32",
-    passive: "#787878",
-    focused: "#FFC107",
-  },
-};
+    background: '#FAFAFA',
+    primary: '#FFFFFF',
+    secondary: '#EEEEEE',
+    action: '#2196F3',
+    failure: '#DC143C',
+    success: '#32CD32',
+    passive: '#787878',
+    focused: '#FFC107'
+  }
+}
 
 export const vuetify = createVuetify({
   components,
@@ -34,11 +34,11 @@ export const vuetify = createVuetify({
     global: {
       ripple: false,
       elevation: 0,
-      rounded: false,
-    },
+      rounded: false
+    }
   },
   icons: {
-    defaultSet: "mdi",
+    defaultSet: 'mdi',
     aliases: {
       ...aliases,
       accountCircle: mdiAccountCircle,
@@ -48,16 +48,16 @@ export const vuetify = createVuetify({
       show: mdiEye,
       successCircle: mdiCheckboxMarkedCircle,
       failCircle: mdiCloseCircle,
-      errorCircle: mdiAlertCircle,
+      errorCircle: mdiAlertCircle
     },
     sets: {
-      mdi,
-    },
+      mdi
+    }
   },
   theme: {
-    defaultTheme: "customLightTheme",
+    defaultTheme: 'customLightTheme',
     themes: {
-      customLightTheme,
-    },
-  },
-});
+      customLightTheme
+    }
+  }
+})

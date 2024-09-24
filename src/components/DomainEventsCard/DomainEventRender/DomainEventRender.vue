@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { DomainEvent } from "../../../types/domain";
-import { formatDateTimeToEnUs } from "../../../utils/formatters";
+import { type DomainEvent } from '../../../types/domain'
+import { formatDateTimeToEnUs } from '../../../utils/formatters'
 
 defineProps<{
-  event: DomainEvent;
-  firstColumnText: string;
-}>();
+  event: DomainEvent
+  firstColumnText: string
+}>()
 </script>
 <template>
   <v-col :cols="3">

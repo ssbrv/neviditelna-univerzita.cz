@@ -1,2 +1,2 @@
-import DomainNSSetCard from "./DomainNSSetCard.vue";
-export default DomainNSSetCard;
+import DomainNSSetCard from './DomainNSSetCard.vue'
+export default DomainNSSetCard

@@ -1,2 +1,2 @@
-import NavigationDrawer from "./NavigationDrawer.vue";
-export default NavigationDrawer;
+import NavigationDrawer from './NavigationDrawer.vue'
+export default NavigationDrawer

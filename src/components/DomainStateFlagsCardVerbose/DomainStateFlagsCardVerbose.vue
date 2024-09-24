@@ -1,42 +1,42 @@
 <script setup lang="ts">
-import { DomainStateFlag, DomainStateFlags } from "../../types/domain";
-import CardWithHeader from "../CardWithHeader";
-import DomainStateFlagWIthIcon from "../DomainStateFlagWithIcon";
+import type { DomainStateFlag, DomainStateFlags } from '../../types/domain'
+import CardWithHeader from '../CardWithHeader'
+import DomainStateFlagWIthIcon from '../DomainStateFlagWithIcon'
 const props = defineProps<{
-  flags: DomainStateFlags;
-}>();
+  flags: DomainStateFlags
+}>()
 
 function groupStateFlags(): DomainStateFlag[][] {
-  const flagGroupMap = new Map<string, number>();
+  const flagGroupMap = new Map<string, number>()
   props.flags.groups.forEach((group, index) => {
     group.forEach((flagName) => {
-      flagGroupMap.set(flagName, index);
-    });
-  });
+      flagGroupMap.set(flagName, index)
+    })
+  })
 
   const groupedFlags: DomainStateFlag[][] = Array.from(
     { length: props.flags.groups.length },
     () => []
-  );
-  const flagsWithNoGroup: DomainStateFlag[] = [];
+  )
+  const flagsWithNoGroup: DomainStateFlag[] = []
 
   props.flags.flags.forEach((flag) => {
-    const groupIndex = flagGroupMap.get(flag.name);
+    const groupIndex = flagGroupMap.get(flag.name)
 
     if (groupIndex === undefined) {
-      flagsWithNoGroup.push(flag);
-      return;
+      flagsWithNoGroup.push(flag)
+      return
     }
 
-    groupedFlags[groupIndex].push(flag);
-  });
+    groupedFlags[groupIndex].push(flag)
+  })
 
-  if (flagsWithNoGroup.length) groupedFlags.push(flagsWithNoGroup);
+  if (flagsWithNoGroup.length) groupedFlags.push(flagsWithNoGroup)
 
-  return groupedFlags;
+  return groupedFlags
 }
 
-const groupedFlags = groupStateFlags();
+const groupedFlags = groupStateFlags()
 </script>
 <template>
   <CardWithHeader title="State flags">
@@ -46,11 +46,7 @@ const groupedFlags = groupStateFlags();
         :key="index"
         class="d-flex flex-column ga-1"
       >
-        <DomainStateFlagWIthIcon
-          v-for="flag in flagGroup"
-          :key="flag.name"
-          :state-flag="flag"
-        />
+        <DomainStateFlagWIthIcon v-for="flag in flagGroup" :key="flag.name" :state-flag="flag" />
       </v-col>
     </v-row>
   </CardWithHeader>

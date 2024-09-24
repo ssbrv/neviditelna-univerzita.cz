@@ -1,2 +1,2 @@
-import TopBar from "./TopBar.vue";
-export default TopBar;
+import TopBar from './TopBar.vue'
+export default TopBar

@@ -1,2 +1,2 @@
-import DomainEventRender from "./DomainEventRender.vue";
-export default DomainEventRender;
+import DomainEventRender from './DomainEventRender.vue'
+export default DomainEventRender

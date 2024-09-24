@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { DomainKeySet } from "../../types/domain";
-import CardWithHeader from "../CardWithHeader";
-defineProps<{ keySet: DomainKeySet }>();
+import { type DomainKeySet } from '../../types/domain'
+import CardWithHeader from '../CardWithHeader'
+defineProps<{ keySet: DomainKeySet }>()
 </script>
 <template>
   <CardWithHeader title="KeySet">

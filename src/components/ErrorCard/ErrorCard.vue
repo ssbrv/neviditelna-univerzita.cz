@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import { useRouter } from "vue-router";
+import { useRouter } from 'vue-router'
 
-const { title = "Error", message = "Something went wrong..." } = defineProps<{
-  title?: string;
-  message?: string;
-}>();
+const { title = 'Error', message = 'Something went wrong...' } = defineProps<{
+  title?: string
+  message?: string
+}>()
 
-const router = useRouter();
+const router = useRouter()
 
 const navigateBack = () => {
   if (window.history.length > 1) {
-    router.back();
+    router.back()
   } else {
-    router.push("/domains");
+    router.push('/domain-list')
   }
-};
+}
 </script>
 <template>
   <div class="shadow-md oblong">
@@ -25,9 +25,7 @@ const navigateBack = () => {
     <div class="pa-4 d-flex flex-column ga-2">
       <p class="text-h6">{{ message }}</p>
       <div class="d-flex justify-end">
-        <v-btn class="bg-failure shadow-sm oblong" @click="navigateBack"
-          >Go back</v-btn
-        >
+        <v-btn class="bg-failure shadow-sm oblong" @click="navigateBack">Go back</v-btn>
       </div>
     </div>
   </div>

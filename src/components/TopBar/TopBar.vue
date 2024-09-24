@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { inject } from "vue";
-import { User } from "../../types/user";
-import UserMenu from "../UserMenu";
-import { USER_SYMBOL } from "../../providers/AuthenticationProvider";
+import { inject } from 'vue'
+import { User } from '../../types/user'
+import UserMenu from '../UserMenu'
+import { USER_SYMBOL } from '../../providers/AuthenticationProvider'
 
-const user: User = inject(USER_SYMBOL) as User;
+const user: User = inject(USER_SYMBOL) as User
 
 const props = defineProps<{
-  onToggleDrawer: () => void;
-}>();
+  onToggleDrawer: () => void
+}>()
 
-const menuActivatorId = "menu-activator";
+const menuActivatorId = 'menu-activator'
 </script>
 
 <template>
@@ -25,7 +25,7 @@ const menuActivatorId = "menu-activator";
       <template v-slot:prepend>
         <v-icon icon="$accountCircle" size="x-large" />
       </template>
-      {{ user.firstName + " " + user.lastName }}
+      {{ user.firstName + ' ' + user.lastName }}
     </v-btn>
     <UserMenu :user="user" :activator="'#' + menuActivatorId" />
   </v-app-bar>

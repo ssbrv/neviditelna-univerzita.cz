@@ -1,2 +1,2 @@
-import DomainKeySetCard from "./DomainKeySetCard.vue";
-export default DomainKeySetCard;
+import DomainKeySetCard from './DomainKeySetCard.vue'
+export default DomainKeySetCard

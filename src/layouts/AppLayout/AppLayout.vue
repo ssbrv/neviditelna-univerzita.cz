@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import TopBar from "../../components/TopBar";
-import NavigationDrawer from "../../components/NavigationDrawer";
-import NavigationButtonDefault from "../../components/NavigationDrawer/NavigationButtonDefault";
+import { ref } from 'vue'
+import TopBar from '../../components/TopBar'
+import NavigationDrawer from '../../components/NavigationDrawer'
+import NavigationButtonDefault from '../../components/NavigationDrawer/NavigationButtonDefault'
 
-const drawer = ref(false);
+const drawer = ref(false)
 function toggleDrawer() {
-  drawer.value = !drawer.value;
+  drawer.value = !drawer.value
 }
 
-const slotNames: Array<string> = ["registry"];
+const slotNames: Array<string> = ['registry']
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const slotNames: Array<string> = ["registry"];
       <NavigationButtonDefault
         text="Registry"
         icon="$earth"
-        path-segment="domains"
+        path-segment="domain-list"
         :path-level="1"
       />
     </template>

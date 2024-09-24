@@ -1,22 +1,16 @@
 <script setup lang="ts">
 const props = defineProps<{
-  drawer: boolean;
-  slotNames: Array<string>;
-}>();
+  drawer: boolean
+  slotNames: Array<string>
+}>()
 </script>
 
 <template>
   <v-navigation-drawer v-model="props.drawer">
     <v-list>
-      <v-list-subheader class="text-caption font-weight-bold">
-        APPLICATIONS
-      </v-list-subheader>
+      <v-list-subheader class="text-caption font-weight-bold"> APPLICATIONS </v-list-subheader>
 
-      <slot
-        v-for="slotName in props.slotNames"
-        :key="slotName"
-        :name="slotName"
-      ></slot>
+      <slot v-for="slotName in props.slotNames" :key="slotName" :name="slotName"></slot>
     </v-list>
   </v-navigation-drawer>
 </template>

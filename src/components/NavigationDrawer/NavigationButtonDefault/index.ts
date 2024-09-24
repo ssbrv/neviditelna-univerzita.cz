@@ -1,2 +1,2 @@
-import NavigationButtonDefault from "./NavigationButtonDefault.vue";
-export default NavigationButtonDefault;
+import NavigationButtonDefault from './NavigationButtonDefault.vue'
+export default NavigationButtonDefault

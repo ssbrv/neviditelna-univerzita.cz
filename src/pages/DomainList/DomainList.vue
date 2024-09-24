@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { useRouter } from "vue-router";
-import { useFetchDomains } from "../../api/domain";
-import ErrorCard from "../../components/ErrorCard";
+import { useRouter } from 'vue-router'
+import { useFetchDomains } from '../../api/domain'
+import ErrorCard from '../../components/ErrorCard'
 
-const { data: domains, error, isLoading } = useFetchDomains();
+const { data: domains, error, isLoading } = useFetchDomains()
 
-const router = useRouter();
+const router = useRouter()
 
 function navigateToDomainDetails(domainId: string) {
-  router.push(`${router.currentRoute.value.path}/${domainId}/details`);
+  router.push(`${router.currentRoute.value.path}/${domainId}/details`)
 }
 </script>
 
