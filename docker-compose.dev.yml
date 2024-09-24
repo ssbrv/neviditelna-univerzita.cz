@@ -9,7 +9,7 @@ services:
       - CHOKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true
     ports:
-      - "${VITE_CLIENT_PORT}:${VITE_CLIENT_PORT}"
+      - '${VITE_CLIENT_PORT}:${VITE_CLIENT_PORT}'
     volumes:
       - ./:/app
       - /app/node_modules
