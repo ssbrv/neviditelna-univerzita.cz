@@ -22,20 +22,20 @@ function navigateToDomainDetails(domainId: string) {
       </li>
     </ul>
 
-    <template v-else-if="error">
-      <v-container class="px-16">
-        <ErrorCard :message="error.message" />
-      </v-container>
-    </template>
+    <v-container v-else-if="error" class="px-16">
+      <ErrorCard :message="error.message" />
+    </v-container>
 
-    <ul v-else class="d-flex flex-column ga-4">
+    <ul v-else-if="domains?.length" class="d-flex flex-column ga-4">
       <v-card
         v-for="domain in domains"
         :key="domain.id"
         :title="domain.fqdn"
         @click="navigateToDomainDetails(domain.id)"
-        class="shadow-sm oblong"
+        class="shadow-md oblong"
       />
     </ul>
+
+    <i v-else>No domains</i>
   </div>
 </template>
