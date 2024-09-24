@@ -29,6 +29,6 @@ export function useFetchDomains(): FetchResponse<Array<Domain>> {
     data: ref([{ id: "1", fqdn: "neviditelna-univerzita.cz" }]),
     isLoading,
     mutate: async () => {},
-    error: ref(undefined),
+    error: shallowRef(undefined),
   };
 }
