@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 import { useFetchDomains } from "../../api/domain";
+import ErrorCard from "../../components/ErrorCard";
 
-const domainList = useFetchDomains();
+const { data: domains, error, isLoading } = useFetchDomains();
 
 const router = useRouter();
 
@@ -15,19 +16,21 @@ function navigateToDomainDetails(domainId: string) {
   <div class="d-flex flex-column ga-6">
     <h2>Domains</h2>
 
-    <ul class="d-flex flex-column ga-4" v-if="domainList.isLoading.value">
+    <ul class="d-flex flex-column ga-4" v-if="isLoading">
       <li v-for="i in 3" :key="i">
         <v-skeleton-loader class="oblong" type="paragraph" />
       </li>
     </ul>
 
-    <template v-else-if="domainList.error?.value">
-      <v-card :title="domainList.error.value.message" />
+    <template v-else-if="error">
+      <v-container class="px-16">
+        <ErrorCard :message="error.message" />
+      </v-container>
     </template>
 
     <ul v-else class="d-flex flex-column ga-4">
       <v-card
-        v-for="domain in domainList.data.value"
+        v-for="domain in domains"
         :key="domain.id"
         :title="domain.fqdn"
         @click="navigateToDomainDetails(domain.id)"

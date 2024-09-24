@@ -11,6 +11,7 @@ import {
   mdiEyeOff,
   mdiCheckboxMarkedCircle,
   mdiCloseCircle,
+  mdiAlertCircle,
 } from "@mdi/js";
 
 const customLightTheme = {
@@ -47,6 +48,7 @@ export const vuetify = createVuetify({
       show: mdiEye,
       successCircle: mdiCheckboxMarkedCircle,
       failCircle: mdiCloseCircle,
+      errorCircle: mdiAlertCircle,
     },
     sets: {
       mdi,

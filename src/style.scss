@@ -54,8 +54,30 @@ ol {
 
 // border radius
 
+$oblong-radius: 3px !important;
+
 .oblong {
-  border-radius: 3px !important;
+  border-radius: $oblong-radius;
+}
+
+.oblong-l {
+  border-top-left-radius: $oblong-radius;
+  border-bottom-left-radius: $oblong-radius;
+}
+
+.oblong-r {
+  border-top-right-radius: $oblong-radius;
+  border-bottom-right-radius: $oblong-radius;
+}
+
+.oblong-t {
+  border-top-left-radius: $oblong-radius;
+  border-top-right-radius: $oblong-radius;
+}
+
+.oblong-b {
+  border-bottom-left-radius: $oblong-radius;
+  border-bottom-right-radius: $oblong-radius;
 }
 
 .circle {

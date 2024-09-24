@@ -12,6 +12,8 @@ import DomainKeySetCard from "../../../components/DomainKeySetCard";
 import DomainStateFlagsCard from "../../../components/DomainStateFlagsCard";
 import DomainStateFlagsCardVerbose from "../../../components/DomainStateFlagsCardVerbose";
 import { useRoute, useRouter } from "vue-router";
+import DomainDetailsLoadingSkeleton from "../../../components/DomainDetailsLoadingSkeleton";
+import ErrorCard from "../../../components/ErrorCard";
 
 const {
   data: domainDetails,
@@ -43,11 +45,13 @@ watch(
 <template>
   <div>
     <template v-if="error">
-      <div>{{ error.message }}</div>
+      <v-container class="px-16">
+        <ErrorCard :message="error.message" />
+      </v-container>
     </template>
 
     <template v-else-if="isLoading || !domainDetails">
-      <div>Loading...</div>
+      <DomainDetailsLoadingSkeleton />
     </template>
 
     <template v-else>
