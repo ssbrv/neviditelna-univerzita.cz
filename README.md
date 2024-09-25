@@ -25,3 +25,7 @@ Task from CZ.NIC
 2. Run `docker-compose -f docker-compose.prod.yml --env-file .env.prod up --build`
 
 3. Then access http://localhost:8080
+
+# Run tests
+
+1. Run 'npm run test'
