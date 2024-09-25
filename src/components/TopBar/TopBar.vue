@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { inject } from 'vue'
-import { User } from '../../types/user'
+import type { User } from '../../types/user'
 import UserMenu from '../UserMenu'
 import { USER_SYMBOL } from '../../providers/AuthenticationProvider'
 
