@@ -14,7 +14,7 @@ const slotNames: Array<string> = ['registry']
 
 <template>
   <TopBar :onToggleDrawer="toggleDrawer" />
-  <NavigationDrawer :drawer="drawer" :slot-names="slotNames">
+  <NavigationDrawer v-model:drawer="drawer" :slot-names="slotNames">
     <template v-slot:registry>
       <NavigationButtonDefault
         text="Registry"
